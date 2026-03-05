@@ -22,6 +22,17 @@ through a web dashboard.
 
 Frontend (React) → Backend (Node.js Express) → AWS APIs → Results stored in S3
 
+scanner/  
+   ec2Scanner.js  
+   s3Scanner.js  
+   cisChecks.js  
+
+storage/  
+   s3Storage.js  
+
+api/  
+   server.js
+
 ## APIs
 
 - GET /instances
@@ -53,3 +64,25 @@ Frontend (React) → Backend (Node.js Express) → AWS APIs → Results stored i
 - You can also click on "Run scan" on the top to run the scan again, in case any changes made to AWS dashboard.
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b87c1bc8-34ae-4f98-a391-a07852c15fbc" />
+
+
+## Data Flow to AWS
+
+- The scanner follows this pipeline:
+  
+  Frontend → Backend API → Scanner → AWS APIs  
+                                  ↓  
+                           Resource Data  
+                                  ↓  
+                        CIS Security Checks  
+                                  ↓  
+                          Results Generated  
+                                  ↓  
+                         Stored in Amazon S3  
+                                  ↓  
+                         Backend APIs serve data  
+                                  ↓  
+                        React dashboard displays
+
+- All scan results are stored in an S3 Bucket as JSON files.
+<img width="955" height="613" alt="image" src="https://github.com/user-attachments/assets/7ba39fed-b7bd-4688-b72b-8a483ff817c5" />
