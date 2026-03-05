@@ -37,3 +37,19 @@ Frontend (React) → Backend (Node.js Express) → AWS APIs → Results stored i
 - React
 - AWS SDK v3
 - Amazon S3
+
+## How To Use
+
+- First, Configure with AWS using secret access key and access key id, region etc.
+- then headover to ./backend and run
+  ```
+  node server.js
+  ```
+- the headover ../fronend/src/ and run
+  ```
+  npm run dev
+  ```
+- Now open localhost:5173 and voila!
+- You can also click on "Run scan" on the top to run the scan again, in case any changes made to AWS dashboard.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b87c1bc8-34ae-4f98-a391-a07852c15fbc" />
